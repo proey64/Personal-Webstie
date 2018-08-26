@@ -12,12 +12,27 @@ const config = {
     port: 8009,
     contentBase: "dist"
   },
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: "babel-loader"
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["react"],
+              plugins: ["transform-class-properties"]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: ["css-loader"]
       }
     ]
   }

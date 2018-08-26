@@ -1,6 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Div } from "glamorous";
+import Header from "./components/Header/Header";
+
+const appWideCSS = {
+  fontFamily: "Roboto, sans-serif",
+  fontSize: 14,
+  backgroundColor: "#f6f1fc",
+  height: "100%"
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -8,8 +16,16 @@ class App extends React.Component {
     this.state = {};
   }
 
+  handleLogin = stuff => {
+    console.log(stuff);
+  };
+
   render() {
-    return <Div />;
+    return (
+      <Div {...appWideCSS}>
+        <Header />
+      </Div>
+    );
   }
 }
 
