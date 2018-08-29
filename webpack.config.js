@@ -5,11 +5,13 @@ const config = {
   entry: "./src/app.jsx",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: "/"
   },
   devServer: {
     inline: true,
     port: 8009,
+    historyApiFallback: true,
     contentBase: "dist"
   },
   resolve: {
