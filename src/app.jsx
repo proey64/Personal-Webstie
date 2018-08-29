@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Div } from "glamorous";
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Routes from "./Routes";
 
 const appWideCSS = {
   fontFamily: "Roboto, sans-serif",
   fontSize: 14,
   backgroundColor: "#f6f1fc",
-  height: "100%"
+  height: "100vh"
 };
 
 class App extends React.Component {
@@ -22,9 +24,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <Div {...appWideCSS}>
-        <Header />
-      </Div>
+      <BrowserRouter>
+        <Div {...appWideCSS}>
+          <Header />
+          <Routes />
+        </Div>
+      </BrowserRouter>
     );
   }
 }

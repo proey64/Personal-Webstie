@@ -22,7 +22,7 @@ class Header extends React.Component {
         paddingRight={32}
       >
         <NavItem text="Home" width={160} />
-        <NavItem text="Websites" width={160} />
+        <NavItem text="Websites" width={160} link="/portfolio" />
         <NavItem text="Projects" width={160} />
         <Div id="right-nav" marginLeft="auto">
           <NavItem text="Login" width={200} />
