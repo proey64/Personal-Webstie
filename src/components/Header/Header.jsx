@@ -9,26 +9,17 @@ class Header extends React.Component {
     this.state = {};
   }
 
-  /* <FacebookLogin
-  appId="2162872150420975"
-  autoLoad
-  fields="name,email,picture"
-  callback={this.handleLogin}
-/> */
-
   render() {
     return (
       <Div
         display="flex"
         justifyContent="flex-start"
         alignItems="center"
-        backgroundColor={colours.lightPink}
+        backgroundColor={colours.header}
         height={72}
-        // backgroundImage={`linear-gradient(to right, ${colours.lightPink} , ${
-        // colours.pink
-        // })`}
-        // borderBottom={`2px solid ${colours.pink}`}
         boxShadow={`0px 0px 8px ${colours.black}`}
+        paddingLeft={32}
+        paddingRight={32}
       >
         <NavItem text="Home" width={160} />
         <NavItem text="Websites" width={160} />
