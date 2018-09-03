@@ -14,27 +14,32 @@ const summaryData = {
   sgs: {
     Summary: Sgs,
     image: sgs,
-    title: "Steyning Sixth Form"
+    title: "Steyning Sixth Form",
+    job: "Student"
   },
   uob: {
     Summary: Uob,
     image: uob,
-    title: "University Of Bristol - Physics"
+    title: "University Of Bristol - Physics",
+    job: "Student"
   },
   sm: {
     Summary: SMarquees,
     image: sm,
-    title: "Strawberry Marquees"
+    title: "Strawberry Marquees",
+    job: "Marquee Erector"
   },
   maryEvans: {
     Summary: MaryEvansSummary,
     image: mary,
-    title: "Mary Evans Picture Library"
+    title: "Mary Evans Picture Library",
+    job: "IT Support / Web Developer"
   },
   heed: {
     Summary: HeedSummary,
     image: heed,
-    title: "Heed Software"
+    title: "Heed Software",
+    job: "Junior Software Developer"
   }
 };
 export default summaryData;

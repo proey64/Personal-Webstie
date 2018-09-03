@@ -3,7 +3,7 @@ import { Div, Img } from "glamorous";
 import colours from "../../Colours";
 import "../../css/timeline.css";
 
-const TimelineSummary = ({ onClick, image, title, Summary }) => (
+const TimelineSummary = ({ onClick, image, title, Summary, job }) => (
   <Div
     display="flex"
     flexWrap="wrap"
@@ -31,7 +31,7 @@ const TimelineSummary = ({ onClick, image, title, Summary }) => (
     </Div>
     <Div display="flex" flex="1 1 0" flexDirection="column" paddingLeft={16}>
       <Div fontSize={24} flex="1 1 200">
-        {title}
+        {`${title} - ${job}`}
       </Div>
       <Div fontSize={14} flex="1 1 0" marginTop={10}>
         <Summary />

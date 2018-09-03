@@ -1,51 +1,81 @@
 import React from "react";
-import { Div, A } from "glamorous";
+import { Div, Img } from "glamorous";
 import colours from "../../Colours";
 import StyledText from "../StyledText";
+import "../../css/portfolio.css";
+
+const ItemCss = {
+  display: "inline",
+  width: "40%",
+  maxWidth: "500",
+  borderRadius: 6,
+  minHeight: 200,
+  minWidth: 330,
+  margin: 20,
+  position: "relative",
+  zIndex: 100,
+  bottom: 0,
+  transition: "all .3s ",
+  backgroundSize: "100%",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
+  overflowY: "hidden",
+  fontSize: 22
+};
 
 class Item extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showOverlay: false
+    };
   }
+
+  showOverlay = () => this.setState({ showOverlay: true });
+
+  hideOverlay = () => this.setState({ showOverlay: false });
 
   render() {
     return (
       <Div
-        flexBasis="40%"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        borderRadius={6}
-        height={230}
-        backgroundColor={this.props.disabled ? colours.white : colours.header}
-        backgroundImage={`url(${this.props.image})`}
-        backgroundSize="100%"
-        backgroundRepeat="no-repeat"
-        backgroundPosition="center"
+        className={
+          this.state.showOverlay && !this.props.disabled ? "portfolio-item" : ""
+        }
         boxShadow={`3px 3px 50px -10px ${colours.header}`}
-        margin={20}
-        padding={20}
-        position="relative"
-        bottom={0}
-        transition="bottom .3s"
-        minWidth={300}
-        maxWidth={450}
         cursor={this.props.disabled ? "not-allowed" : "pointer"}
-        fontSize={22}
+        onMouseOver={this.showOverlay}
+        onMouseLeave={this.hideOverlay}
+        onFocus={this.showOverlay}
+        onBlur={this.hideOverlay}
+        {...ItemCss}
         css={{
           ":hover": {
             bottom: 5
           }
         }}
       >
-        <A href={this.props.link}>
-          <StyledText
-            color={this.props.disabled ? colours.header : colours.white}
+        {this.state.showOverlay && (
+          <Div
+            position="absolute"
+            height="100%"
+            width="100%"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            zIndex={30}
           >
-            {this.props.name}
-          </StyledText>
-        </A>
+            {this.props.icon ? (
+              <this.props.icon size={100} color={colours.purple} />
+            ) : (
+              <StyledText
+                color={this.props.disabled ? colours.header : colours.purple}
+              >
+                {this.props.name}
+              </StyledText>
+            )}
+          </Div>
+        )}
+        <Img position="absolute" width="100%" src={this.props.image} />
       </Div>
     );
   }

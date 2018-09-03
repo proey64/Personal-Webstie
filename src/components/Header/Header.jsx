@@ -1,5 +1,6 @@
 import React from "react";
-import { Div } from "glamorous";
+import { Div, A } from "glamorous";
+import { FaGithub } from "react-icons/fa";
 import NavItem from "./NavItem";
 import colours from "../../Colours";
 
@@ -20,12 +21,18 @@ class Header extends React.Component {
         boxShadow={`0px 0px 8px ${colours.black}`}
         paddingLeft={32}
         paddingRight={32}
+        fontSize={18}
       >
-        <NavItem text="Home" width={160} />
-        <NavItem text="Websites" width={160} link="/portfolio" />
-        <NavItem text="Projects" width={160} />
+        <NavItem text="Sam Pennington" width={160} />
+        <NavItem text="Projects" width={160} link="/portfolio" />
         <Div id="right-nav" marginLeft="auto">
-          <NavItem text="Login" width={200} />
+          <A href="https://github.com/proey64">
+            <FaGithub
+              size={32}
+              color={this.state.gitHovered ? colours.purple : colours.white}
+              cursor="pointer"
+            />
+          </A>
         </Div>
       </Div>
     );
