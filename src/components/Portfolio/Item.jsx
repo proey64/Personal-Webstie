@@ -1,5 +1,5 @@
 import React from "react";
-import { Div } from "glamorous";
+import { Div, A } from "glamorous";
 import colours from "../../Colours";
 import StyledText from "../StyledText";
 
@@ -16,10 +16,13 @@ class Item extends React.Component {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        flexGrow={1}
         borderRadius={6}
         height={230}
-        backgroundColor={colours.white}
+        backgroundColor={this.props.disabled ? colours.white : colours.header}
+        backgroundImage={`url(${this.props.image})`}
+        backgroundSize="100%"
+        backgroundRepeat="no-repeat"
+        backgroundPosition="center"
         boxShadow={`3px 3px 50px -10px ${colours.header}`}
         margin={20}
         padding={20}
@@ -36,7 +39,13 @@ class Item extends React.Component {
           }
         }}
       >
-        <StyledText>{this.props.name}</StyledText>
+        <A href={this.props.link}>
+          <StyledText
+            color={this.props.disabled ? colours.header : colours.white}
+          >
+            {this.props.name}
+          </StyledText>
+        </A>
       </Div>
     );
   }

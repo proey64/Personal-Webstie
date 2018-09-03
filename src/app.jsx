@@ -8,8 +8,14 @@ import Routes from "./Routes";
 const appWideCSS = {
   fontFamily: "Roboto, sans-serif",
   fontSize: 14,
+  fontSmoothing: "antialiased",
   backgroundColor: "#f6f1fc",
-  height: "100vh"
+  height: "100vh",
+  css: {
+    ":link": {
+      textDecoration: "none !important"
+    }
+  }
 };
 
 class App extends React.Component {
@@ -18,14 +24,17 @@ class App extends React.Component {
     this.state = {};
   }
 
-  handleLogin = stuff => {
-    console.log(stuff);
-  };
-
   render() {
     return (
       <BrowserRouter>
-        <Div {...appWideCSS}>
+        <Div
+          {...appWideCSS}
+          css={{
+            ":link": {
+              textDecoration: "none !important"
+            }
+          }}
+        >
           <Header />
           <Routes />
         </Div>

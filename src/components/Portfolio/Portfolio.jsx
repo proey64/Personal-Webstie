@@ -1,6 +1,7 @@
 import React from "react";
 import { Div } from "glamorous";
 import Item from "./Item";
+import ash from "../../Images/ash.png";
 
 export default class Portfolio extends React.Component {
   constructor(props) {
@@ -17,7 +18,11 @@ export default class Portfolio extends React.Component {
         flexWrap="wrap"
         paddingTop={30}
       >
-        <Item name="Ashliegh Williams Art Portfolio" />
+        <Item
+          name="Ashliegh Williams Art Portfolio"
+          image={ash}
+          link="http://ashleighwilliams.co.uk/"
+        />
         <Item name="More coming soon" disabled />
         <Item name="More coming soon" disabled />
         <Item name="More coming soon" disabled />
