@@ -1,8 +1,9 @@
 import React from "react";
-import { Div, B } from "glamorous";
+import { Div } from "glamorous";
 import Me from "./Me";
 import Timeline from "./Timeline/Timeline";
 import Responsive from "./Responsive";
+import MySummary from "./MySummary";
 
 class Home extends React.Component {
   constructor(props) {
@@ -33,16 +34,12 @@ class Home extends React.Component {
           flexWrap="wrap"
           height={240}
         >
-          <Div fontSize={18} flex="0 0 70%" maxWidth={500}>
-            <B fontSize={20} lineHeight={2}>
-              Sam Pennington
-            </B>
-            <br />I am a junior software developer based in London, primarily I
-            have worked on the front end of web applications using React, though
-            I have had some exposure to Node.js.
-            <br />I am currently looking for my next Junior Development role,
-            and I am also happy to discuss any freelance jobs.
-          </Div>
+          <Responsive.Mobile>
+            <MySummary fontSize={16} titleSize={18} textAlign="center" />
+          </Responsive.Mobile>
+          <Responsive.NotMobile>
+            <MySummary fontSize={18} titleSize={22} textAlign="left" />
+          </Responsive.NotMobile>
           <Responsive.Desktop>
             <Me
               makeMeFlip={this.makeMeFlip}
