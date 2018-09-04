@@ -3,6 +3,7 @@ import { Div } from "glamorous";
 import colours from "../../constants/Colours";
 import "../../css/timeline.css";
 import TimelineDate from "./TimelineDate";
+import Responsive from "../Responsive";
 
 class TimelineItem extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class TimelineItem extends React.Component {
 
   render() {
     const { active } = this.state;
+    const { isMobile } = this.props;
     return (
       <Div
         className="timeline-item"
@@ -56,31 +58,35 @@ class TimelineItem extends React.Component {
         height={80}
         borderRadius="50%"
         cursor="pointer"
+        left={active && isMobile ? 20 : 0}
         backgroundColor={colours.white}
         border={`3px solid ${active ? colours.purple : colours.header}`}
         backgroundImage={`url(${this.props.image})`}
         backgroundRepeat="no-repeat"
         transition="all .5s ease"
         opacity={active ? 1 : 0.6}
-        bottom={active ? 60 : 50}
+        bottom={active || isMobile ? 60 : 50}
         {...this.props.style}
       >
-        <Div
-          id="1"
-          width={2}
-          transition="all .5s ease"
-          backgroundColor={colours.header}
-          position="absolute"
-          left="50%"
-          height={active ? 20 : 10}
-          bottom={active ? -20 : -10}
-          display={this.state.showStems ? "block" : "none"}
-        />
+        <Responsive.NotMobile>
+          <Div
+            id="1"
+            width={2}
+            transition="all .5s ease"
+            backgroundColor={colours.header}
+            position="absolute"
+            left="50%"
+            height={active || isMobile ? 20 : 10}
+            bottom={active || isMobile ? -20 : -10}
+            display={this.state.showStems ? "block" : "none"}
+          />
+        </Responsive.NotMobile>
 
         <TimelineDate
           show={!active && this.state.showDates}
           fromDate={this.props.fromDate}
           toDate={this.props.toDate}
+          isMobile={isMobile}
         />
       </Div>
     );

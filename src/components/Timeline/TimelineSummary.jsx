@@ -3,15 +3,16 @@ import { Div, Img } from "glamorous";
 import colours from "../../constants/Colours";
 import "../../css/timeline.css";
 
-const TimelineSummary = ({ onClick, image, title, Summary, job }) => (
+const TimelineSummary = ({ onClick, image, title, Summary, job, isMobile }) => (
   <Div
-    display="flex"
-    flexWrap="wrap"
+    display={isMobile ? "block" : "flex"}
+    flexWrap={isMobile ? "no-wrap" : "wrap"}
+    flexDirection={isMobile ? "column" : "row"}
     maxWidth={900}
+    alignContent="flex-start"
+    justifyContent="flex-start"
     onClick={onClick}
-    alignContent="center"
-    justifyContent="center"
-    marginTop={100}
+    marginTop={isMobile ? 20 : 100}
     marginLeft={20}
     marginRight={20}
     padding={20}
@@ -27,13 +28,13 @@ const TimelineSummary = ({ onClick, image, title, Summary, job }) => (
       flexDirection="column"
       justifyContent="center"
     >
-      <Img src={image} maxHeight={140} maxWidth={140} />
+      {!isMobile && <Img src={image} maxHeight={140} maxWidth={140} />}
     </Div>
     <Div display="flex" flex="1 1 0" flexDirection="column" paddingLeft={16}>
-      <Div fontSize={24} flex="1 1 200">
+      <Div fontSize={isMobile ? 18 : 24} flex="1 1 200">
         {`${title} - ${job}`}
       </Div>
-      <Div fontSize={14} flex="1 1 0" marginTop={10}>
+      <Div fontSize={isMobile ? 12 : 14} flex="1 1 0" marginTop={10}>
         <Summary />
       </Div>
     </Div>
