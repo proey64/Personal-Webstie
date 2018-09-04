@@ -35,8 +35,8 @@ export default class Portfolio extends React.Component {
           image={personalsite} /* icon={FaGithub}  */
           link="/projects/samuelpennington"
         />
-        {/* <Item name="More coming soon" disabled />
-        <Item name="More coming soon" disabled /> */}
+        <Item name="More coming soon" link="/" disabled />
+        <Item name="More coming soon" link="/" disabled />
       </Div>
     );
   }

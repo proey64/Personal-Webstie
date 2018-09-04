@@ -5,7 +5,13 @@ import me from "../Images/sam.png";
 import StyledText from "./StyledText";
 
 const Me = ({ makeMeFlip, deg, displayMe }) => (
-  <Div width={200} height={200} position="relative" userSelect="none">
+  <Div
+    width={200}
+    height={200}
+    position="relative"
+    userSelect="none"
+    flex="0 0 auto"
+  >
     <Img
       src={me}
       width={200}

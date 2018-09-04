@@ -1,5 +1,5 @@
 import React from "react";
-import { Div, Img, A } from "glamorous";
+import { Div, A } from "glamorous";
 import ash1 from "../../../Images/ash1.png";
 import colours from "../../../constants/Colours";
 import EntryTemplate from "../EntryTemplate";
