@@ -1,6 +1,6 @@
 import React from "react";
 import { Div } from "glamorous";
-import colours from "../../Colours";
+import colours from "../../constants/Colours";
 import TimelineItem from "./TimelineItem";
 import TimelineSummary from "./TimelineSummary";
 import timeLineData from "./timeLineData";

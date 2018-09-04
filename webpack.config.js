@@ -9,7 +9,6 @@ const config = {
     publicPath: "/"
   },
   devServer: {
-    inline: true,
     port: 8009,
     historyApiFallback: true,
     contentBase: "dist"

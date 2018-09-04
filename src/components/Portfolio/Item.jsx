@@ -1,6 +1,7 @@
 import React from "react";
 import { Div, Img } from "glamorous";
-import colours from "../../Colours";
+import { Link } from "react-router-dom";
+import colours from "../../constants/Colours";
 import StyledText from "../StyledText";
 import "../../css/portfolio.css";
 
@@ -55,25 +56,27 @@ class Item extends React.Component {
         }}
       >
         {this.state.showOverlay && (
-          <Div
-            position="absolute"
-            height="100%"
-            width="100%"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            zIndex={30}
-          >
-            {this.props.icon ? (
-              <this.props.icon size={100} color={colours.purple} />
-            ) : (
-              <StyledText
-                color={this.props.disabled ? colours.header : colours.purple}
-              >
-                {this.props.name}
-              </StyledText>
-            )}
-          </Div>
+          <Link to={this.props.link}>
+            <Div
+              position="absolute"
+              height="100%"
+              width="100%"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              zIndex={30}
+            >
+              {this.props.icon ? (
+                <this.props.icon size={100} color={colours.purple} />
+              ) : (
+                <StyledText
+                  color={this.props.disabled ? colours.header : colours.purple}
+                >
+                  {this.props.name}
+                </StyledText>
+              )}
+            </Div>
+          </Link>
         )}
         <Img position="absolute" width="100%" src={this.props.image} />
       </Div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Div, Img } from "glamorous";
-import colours from "../../Colours";
+import colours from "../../constants/Colours";
 import "../../css/timeline.css";
 
 const TimelineSummary = ({ onClick, image, title, Summary, job }) => (
