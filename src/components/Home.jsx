@@ -38,7 +38,7 @@ class Home extends React.Component {
             <MySummary fontSize={16} titleSize={18} textAlign="center" />
           </Responsive.Mobile>
           <Responsive.NotMobile>
-            <MySummary fontSize={18} titleSize={22} textAlign="left" />
+            <MySummary fontSize={16} titleSize={18} textAlign="left" />
           </Responsive.NotMobile>
           <Responsive.Desktop>
             <Me

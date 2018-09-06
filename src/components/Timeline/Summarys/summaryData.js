@@ -14,7 +14,7 @@ const summaryData = {
   sgs: {
     Summary: Sgs,
     image: sgs,
-    title: "Steyning Sixth Form",
+    title: "Steyning Sixth Form and school",
     job: "Student"
   },
   uob: {

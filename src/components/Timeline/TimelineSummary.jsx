@@ -28,7 +28,7 @@ const TimelineSummary = ({ onClick, image, title, Summary, job, isMobile }) => (
       flexDirection="column"
       justifyContent="center"
     >
-      {!isMobile && <Img src={image} maxHeight={140} maxWidth={140} />}
+      {!isMobile && <Img src={image} maxHeight={120} maxWidth={120} />}
     </Div>
     <Div display="flex" flex="1 1 0" flexDirection="column" paddingLeft={16}>
       <Div fontSize={isMobile ? 18 : 24} flex="1 1 200">

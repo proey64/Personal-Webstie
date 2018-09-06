@@ -4,7 +4,7 @@ import { Div } from "glamorous";
 const SMarquees = () => (
   <Div>
     Having just finished university, I spent 6 months working for a marquee
-    company in West Sussex, erecting marquees for large events suc as weddings.
+    company in West Sussex, erecting marquees for large events such as weddings.
     <br />
     While doing this I was working my way through the courses found on{" "}
     <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>, teaching myself
