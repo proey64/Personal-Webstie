@@ -26,19 +26,23 @@ class Timeline extends React.Component {
   };
 
   render() {
+    const {
+      toggleSummary,
+      state: { showSummarys }
+    } = this;
     return (
       <React.Fragment>
         <Responsive.Mobile>
           <ItemsAndSummarys
-            toggleSummary={this.toggleSummary}
-            showSummarys={this.state.showSummarys}
+            toggleSummary={toggleSummary}
+            showSummarys={showSummarys}
             isMobile
           />
         </Responsive.Mobile>
         <Responsive.NotMobile>
           <ItemsAndSummarys
-            toggleSummary={this.toggleSummary}
-            showSummarys={this.state.showSummarys}
+            toggleSummary={toggleSummary}
+            showSummarys={showSummarys}
           />
         </Responsive.NotMobile>
       </React.Fragment>

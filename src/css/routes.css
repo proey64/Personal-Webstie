@@ -1,8 +1,15 @@
 .route-wrapper {
     position: relative;
+    min-height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
   }
   
   .route-wrapper > div {
     position: absolute;
+    display: flex;
+    align-content: center;
+    justify-content: center;
     width: 100%;
   }

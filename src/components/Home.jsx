@@ -22,8 +22,15 @@ class Home extends React.Component {
   };
 
   render() {
+    const { makeMeFlip } = this;
+    const { deg, displayMe } = this.state;
     return (
-      <Div display="flex" flexDirection="column" justifyContent="flex-start">
+      <Div
+        display="flex"
+        flexDirection="column"
+        justifyContent="flex-start"
+        width="100%"
+      >
         <Div
           display="flex"
           justifyContent="space-evenly"
@@ -41,11 +48,7 @@ class Home extends React.Component {
             <MySummary fontSize={16} titleSize={18} textAlign="left" />
           </Responsive.NotMobile>
           <Responsive.Desktop>
-            <Me
-              makeMeFlip={this.makeMeFlip}
-              deg={this.state.deg}
-              displayMe={this.state.displayMe}
-            />
+            <Me makeMeFlip={makeMeFlip} deg={deg} displayMe={displayMe} />
           </Responsive.Desktop>
         </Div>
         <Timeline />

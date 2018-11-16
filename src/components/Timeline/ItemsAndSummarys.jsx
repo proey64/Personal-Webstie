@@ -41,6 +41,7 @@ const ItemsAndSummarys = ({ toggleSummary, showSummarys, isMobile }) => {
       flexDirection={isMobile ? "row" : "column"}
       alignItems="center"
       justifyContent="center"
+      width="100%"
     >
       <Div {...css}>
         {Object.keys(timeLineData).map(key => (

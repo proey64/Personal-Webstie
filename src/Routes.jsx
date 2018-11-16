@@ -5,6 +5,9 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Home from "./components/Home";
 import ArtPortfolio from "./components/Portfolio/Entries/ArtPortfolio";
 import SamPennington from "./components/Portfolio/Entries/SamPennington";
+import Login from "./components/Authentication/Login";
+import Messaging from "./components/Messaging";
+import Chess from "./components/Chess";
 
 import "./css/routes.css";
 
@@ -37,25 +40,35 @@ const bounceTransition = {
   }
 };
 
-export default class Routes extends React.Component {
-  render() {
-    return (
-      <AnimatedSwitch
-        atEnter={bounceTransition.atEnter}
-        atLeave={bounceTransition.atLeave}
-        atActive={bounceTransition.atActive}
-        mapStyles={mapStyles}
-        className="route-wrapper"
-      >
-        <Route path="/" exact component={Home} />
-        <Route path="/projects" exact component={Portfolio} />
-        <Route path="/projects/artportfolio" exact component={ArtPortfolio} />
+export default function Routes(props) {
+  const isLoggedIn = props.authProps.isAuthenticated;
+  return (
+    <AnimatedSwitch
+      atEnter={bounceTransition.atEnter}
+      atLeave={bounceTransition.atLeave}
+      atActive={bounceTransition.atActive}
+      mapStyles={mapStyles}
+      className="route-wrapper"
+    >
+      <Route path="/" exact component={Home} />
+      {!isLoggedIn && (
         <Route
-          path="/projects/samuelpennington"
+          path="/login"
           exact
-          component={SamPennington}
+          render={renderProps => (
+            <Login authProps={props.authProps} {...renderProps} />
+          )}
         />
-      </AnimatedSwitch>
-    );
-  }
+      )}
+      {!isLoggedIn && <Route path="/projects" exact component={Portfolio} />}
+      <Route path="/projects/artportfolio" exact component={ArtPortfolio} />
+      <Route
+        path="/projects/samuelpennington"
+        exact
+        component={SamPennington}
+      />
+      <Route path="/chess" exact component={Chess} />
+      <Route path="/messaging" exact component={Messaging} />
+    </AnimatedSwitch>
+  );
 }

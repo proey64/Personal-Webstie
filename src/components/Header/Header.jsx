@@ -11,6 +11,9 @@ class Header extends React.Component {
   }
 
   render() {
+    const {
+      authProps: { isAuthenticated, logOut }
+    } = this.props;
     return (
       <Div
         display="flex"
@@ -25,10 +28,17 @@ class Header extends React.Component {
       >
         <NavItem text="Sam Pennington" width={160} exact link="/" />
         <NavItem text="Projects" width={160} link="/projects" />
+        <NavItem text="Message" width={160} link="/messaging" />
+        <NavItem text="Chess" width={160} link="/chess" />
+        <A href="https://github.com/proey64">
+          <FaGithub size={32} color={colours.white} cursor="pointer" />
+        </A>
         <Div id="right-nav" marginLeft="auto">
-          <A href="https://github.com/proey64">
-            <FaGithub size={32} color={colours.white} cursor="pointer" />
-          </A>
+          {isAuthenticated ? (
+            <Div onClick={() => logOut()}>Log out</Div>
+          ) : (
+            <NavItem text="Login" width={160} link="/login" />
+          )}
         </Div>
       </Div>
     );

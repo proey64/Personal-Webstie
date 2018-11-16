@@ -25,9 +25,7 @@ class TimelineItem extends React.Component {
     }
   }
 
-  growItem = () => {
-    this.setState({ active: true });
-  };
+  growItem = () => this.setState({ active: true });
 
   shrinkItem = () => {
     if (this.props.active) {

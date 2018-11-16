@@ -1,0 +1,21 @@
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  align-content: center;
+  justify-content: center;
+}
+
+input {
+  height: 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #1B1C3C;
+  display: flex;
+  flex: 1 1 auto;
+  flex-grow: 1;
+} 

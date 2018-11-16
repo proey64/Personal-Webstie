@@ -1,6 +1,5 @@
 import React from "react";
 import { Div } from "glamorous";
-import { FaGithub } from "react-icons/fa";
 import { Route } from "react-router-dom";
 import Item from "./Item";
 import ArtPortfolio from "./Entries/ArtPortfolio";
